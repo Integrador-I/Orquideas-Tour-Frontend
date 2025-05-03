@@ -1,8 +1,5 @@
 "use client"; 
 import Link from "next/link";
-import { AiOutlineMoon } from "react-icons/ai";
-import { GoSun } from "react-icons/go";
-
 import { heading, titleFont } from "@/config/fonts";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
