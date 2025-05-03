@@ -51,13 +51,13 @@ export const HeaderPage = () => {
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="./auth/login"
+              href="./Autenticacion/Login"
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg border-2 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700`}
             >
               Sign In
             </Link>
             <Link
-              href="./auth/new-account"
+              href="./Autenticacion/Registro"
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300`}
             >
               Sign Up
@@ -75,13 +75,13 @@ export const HeaderPage = () => {
       }`}>
         <div className="flex flex-col gap-3">
           <Link
-            href="./auth/login"
+            href="./Autenticacion/Login"
             className={`${heading.className} w-full py-2 text-center text-lg rounded-lg border-2 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700`}
           >
             Sign In
           </Link>
           <Link
-            href="./auth/new-account"
+            href="./Autenticacion/Registro"
             className={`${heading.className} w-full py-2 text-center text-lg rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300`}
           >
             Sign Up
