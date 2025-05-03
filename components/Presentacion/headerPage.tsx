@@ -7,7 +7,8 @@ import { heading, titleFont } from "@/config/fonts";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
-import { Metadata } from "next";
+import { VscAccount } from "react-icons/vsc";
+import { SlArrowDown } from "react-icons/sl";
 
 export const HeaderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +35,8 @@ export const HeaderPage = () => {
         <nav className={`absolute top-full left-0 w-full bg-white dark:bg-gray-800 lg:static lg:flex lg:w-auto lg:bg-transparent lg:dark:bg-transparent transition-all duration-300 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible lg:opacity-100 lg:visible"
         }`}>
-          <ul className="flex flex-col items-center py-4 lg:flex-row lg:py-0 lg:space-x-10">
-            {['Home', 'Sales', 'Inventory', 'About'].map((item) => (
+          <ul className="flex flex-col items-center py-4 lg:flex-row lg:py-0 lg:space-x-10 ">
+            {['Incio', 'Viajes', 'Encomiendas', 'Pagos','Sobre Nosotros'].map((item) => (
               <li key={item} className="w-full text-center lg:w-auto">
                 <Link
                   href={`#${item.toLowerCase()}`}
@@ -50,7 +51,9 @@ export const HeaderPage = () => {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-4">
-            <Link
+          <VscAccount className="text-3xl"/>
+          <SlArrowDown />
+            {/*<Link
               href="./auth/login"
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg border-2 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700`}
             >
@@ -61,13 +64,8 @@ export const HeaderPage = () => {
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300`}
             >
               Sign Up
-            </Link>
+            </Link>*/}
           </div>
-          
-          <button className="p-2 text-2xl text-[#79808a] dark:text-white">
-            <AiOutlineMoon className="dark:hidden" />
-            <GoSun className="hidden dark:block" />
-          </button>
         </div>
       </div>
       <div className={`lg:hidden px-5 pb-4 transition-all duration-300 ${
