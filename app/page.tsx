@@ -1,11 +1,5 @@
-import { EntradaPage } from '@/components/Presentacion/entrada';
-import { HeaderPage} from '../components/Presentacion/headerPage';
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return(
-    <>
-    <HeaderPage/>
-    <EntradaPage/>
-    </>
-  )
+  redirect("/inicio")
 }

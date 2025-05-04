@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { geistMono, geistSans } from "@/config/fonts";
+import { HeaderPage } from "@/components/Presentacion/headerPage";
 
 export const metadata: Metadata = {
   title: "Orquídeas | Tour",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+      
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+        <HeaderPage/>
         {children}
       </body>
     </html>
