@@ -52,21 +52,16 @@ export const HeaderPage = () => {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-4">
-<<<<<<< HEAD
-            <Link
-              href="./Autenticacion/Login"
-=======
             <VscAccount className="text-3xl" />
             <SlArrowDown />
             {/*<Link
               href="./auth/login"
->>>>>>> main
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg border-2 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700`}
             >
               Sign In
             </Link>
             <Link
-              href="./Autenticacion/Registro"
+              href="./auth/new-account"
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300`}
             >
               Sign Up

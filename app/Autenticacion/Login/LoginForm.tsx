@@ -17,17 +17,10 @@ export default function LoginForm() {
     setError('');
 
     try {
-      // Aquí iría tu lógica de autenticación
-      // Por ejemplo, una llamada a una API
-      // const response = await fetch('/api/auth/login', {...});
-      
-      // Simulamos un retraso de red
+      // Backend :v
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Simulamos un login exitoso
-      // En un caso real, verificarías la respuesta de tu API
       if (email && password) {
-        router.push('/dashboard');
+        router.push('/');
       } else {
         setError('Credenciales incorrectas');
       }

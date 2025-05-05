@@ -45,7 +45,7 @@ export default function RegisterForm() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       if (formData.email && formData.password) {
-        router.push('/dashboard');
+        router.push('/');
       } else {
         setError('Error al crear la cuenta');
       }

@@ -16,14 +16,14 @@ export default function RegisterPage() {
           <div className="absolute inset-0 bg-blue-800 opacity-20 rounded-r-xl"></div>
           <div className="absolute bottom-0 right-0 p-6 text-white text-right">
             <h2 className="text-2xl font-bold">Únete a nuestro equipo</h2>
-            <p className="text-blue-100">Optimiza tu cadena logística</p>
+            <p className="text-blue-100">Únete siii :3</p>
           </div>
         </div>
         
         <div className="w-full md:w-1/2 p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-blue-800">Crear Cuenta</h1>
-            <p className="text-blue-600 mt-2">Comienza a gestionar tus envíos</p>
+            <p className="text-blue-600 mt-2">Comineza a realizar envios y viajes espectaculares!!</p>
           </div>
           <RegisterForm />
           <p className="mt-6 text-center text-sm text-blue-700">
