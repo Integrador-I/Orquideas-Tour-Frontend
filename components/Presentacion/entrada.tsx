@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import BuscadorViaje from "../BuscarViajes/buscardoViaje"
 
 export const EntradaPage = () => {
