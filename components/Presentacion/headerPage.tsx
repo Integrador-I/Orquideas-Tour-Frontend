@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 import { VscAccount } from "react-icons/vsc";
 import { SlArrowDown } from "react-icons/sl";
+import { LoginMenu } from "./LoginMenu/loginMenu";
 
 export const HeaderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,8 +54,7 @@ export const HeaderPage = () => {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-4">
-            <VscAccount className="text-3xl" />
-            <SlArrowDown />
+            <LoginMenu/>
             {/*<Link
               href="./auth/login"
               className={`${heading.className} px-4 py-2 text-lg lg:text-xl rounded-lg border-2 transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700`}

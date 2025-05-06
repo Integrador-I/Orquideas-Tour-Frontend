@@ -12,18 +12,26 @@ export const EntradaEncomienda = () => {
     setMounted(true);
   }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     setSearchPressed(true);
+    try {
+      const res = await fetch(`http://localhost:8080/api/encomienda/${searchValue}`);
+      if (!res.ok) throw new Error("No se pudo obtener el estado");
+
+      const data = await res.json();
+      console.log(data.estado);
+    } catch (error) {
+      console.log("Error al buscar estado: ",)
+    }
   };
 
   return (
     <section className="relative z-40 overflow-hidden py-16 sm:py-24 lg:py-28 bg-amber-50 min-h-screen flex items-center">
       <div className="px-4 mx-auto max-w-7xl w-full">
         <div
-          className={`text-center mb-10 transition-all duration-700 ${
-            mounted ? "animate-fadeIn" : "opacity-0"
-          }`}
+          className={`text-center mb-10 transition-all duration-700 ${mounted ? "animate-fadeIn" : "opacity-0"
+            }`}
         >
           <h2 className="text-3xl sm:text-5xl font-bold leading-tight">
             BUSCA Y CONSULTA EL <br />
@@ -34,9 +42,8 @@ export const EntradaEncomienda = () => {
         </div>
 
         <form
-          className={`max-w-2xl mx-auto mb-12 transition-all duration-700 ${
-            mounted ? "animate-fadeIn" : "opacity-0"
-          }`}
+          className={`max-w-2xl mx-auto mb-12 transition-all duration-700 ${mounted ? "animate-fadeIn" : "opacity-0"
+            }`}
           onSubmit={handleSearch}
         >
           <div className="relative flex shadow-lg rounded-lg overflow-hidden">
@@ -77,9 +84,8 @@ export const EntradaEncomienda = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:items-center">
 
           <div
-            className={`relative aspect-square w-full max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-xl transition-all duration-1000 ease-out ${
-              mounted ? "animate-fadeIn" : "opacity-0"
-            }`}
+            className={`relative aspect-square w-full max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-xl transition-all duration-1000 ease-out ${mounted ? "animate-fadeIn" : "opacity-0"
+              }`}
           >
             <Image
               src="/images/CajaCerrada.avif"
