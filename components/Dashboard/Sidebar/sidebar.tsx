@@ -1,15 +1,8 @@
 "use client"
 
-import type * as React from "react"
 import {
   ArrowUpCircleIcon,
   BarChartIcon,
-  CameraIcon,
-  ClipboardListIcon,
-  DatabaseIcon,
-  FileCodeIcon,
-  FileIcon,
-  FileTextIcon,
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
@@ -19,7 +12,6 @@ import {
   UsersIcon,
 } from "lucide-react"
 
-import { NavDocuments } from "./sidebarDocumentos"
 import { NavMain } from "./sidebarPrincipal"
 import { NavSecondary } from "./sidebarSecundario"
 import { NavUser } from "./sidebarUser"
@@ -46,72 +38,34 @@ const data = {
       icon: LayoutDashboardIcon,
     },
     {
-      title: "Lifecycle",
+      title: "Buses",
       url: "#",
       icon: ListIcon,
     },
     {
-      title: "Analytics",
+      title: "Calendario",
       url: "#",
       icon: BarChartIcon,
     },
     {
-      title: "Projects",
-      url: "#",
+      title: "Empleados",
+      url: "/dashboard/empleados",
       icon: FolderIcon,
     },
     {
-      title: "Team",
+      title: "Encomiendas",
       url: "#",
       icon: UsersIcon,
     },
-  ],
-  navClouds: [
     {
-      title: "Capture",
-      icon: CameraIcon,
-      isActive: true,
+      title: "Pagos",
       url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
+      icon: UsersIcon,
     },
     {
-      title: "Proposal",
-      icon: FileTextIcon,
+      title: "Reporte",
       url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: FileCodeIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
+      icon: UsersIcon,
     },
   ],
   navSecondary: [
@@ -131,23 +85,7 @@ const data = {
       icon: SearchIcon,
     },
   ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: DatabaseIcon,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: ClipboardListIcon,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: FileIcon,
-    },
-  ],
+
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -167,7 +105,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

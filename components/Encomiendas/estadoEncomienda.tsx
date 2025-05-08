@@ -1,4 +1,3 @@
-
 interface EstadoDePedidoProps {
   status: 'confirmed' | 'paid' | 'shipped' | 'delivered';
 }

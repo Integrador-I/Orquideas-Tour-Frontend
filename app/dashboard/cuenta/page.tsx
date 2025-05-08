@@ -1,5 +1,4 @@
-
-export default function dashboard(){
+export default function cuenta(){
     return(
         <div>hola</div>
     )

@@ -1,5 +1,4 @@
-
-export default function dashboard(){
+export default function buses(){
     return(
         <div>hola</div>
     )
