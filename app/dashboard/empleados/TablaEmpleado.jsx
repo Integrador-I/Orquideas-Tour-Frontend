@@ -8,9 +8,9 @@ function TablaNombres() {
   const [numero, setNumero] = useState('');
   const [contraseña, setContrasenia] = useState('');
   const [datos, setDatos] = useState([
-    { nombre: 'Juan', apellido: 'Pérez', correo: '123456789',numero:'1292911292',contraseña:'abc' },
-    { nombre: 'María', apellido: 'Gómez', correo: '987654321',numero:'1292911292',contraseña:'abc' },
-    { nombre: 'Pedro', apellido: 'López', correo: '456789123',numero:'1292911292',contraseña:'abc' },
+    { nombre: 'Arnold', apellido: 'Juarez', correo: 'arnold@gmail.com',numero:'1292911292',contraseña:'abc' },
+    { nombre: 'Lucho', apellido: 'Gómez', correo: 'lucho@gmail.com',numero:'1292911292',contraseña:'abc' },
+    { nombre: 'Lokaiza', apellido: 'López', correo: 'lokaiza@gmail.com',numero:'1292911292',contraseña:'abc' },
   ]);
 
   const agregarFila = (event) => {
@@ -158,6 +158,7 @@ function TablaNombres() {
         <table className="table-auto border w-full">
           <thead>
             <tr className="bg-gray-200">
+              <th className="border px-4 py-2">ID</th> {/* ← NUEVA COLUMNA */}
               <th className="border px-4 py-2">Nombre</th>
               <th className="border px-4 py-2">Apellido</th>
               <th className="border px-4 py-2">Correo</th>
@@ -170,6 +171,7 @@ function TablaNombres() {
           <tbody>
             {datos.map((persona, index) => (
               <tr key={index}>
+                <td className="border px-4 py-2">{index + 1}</td> {/* ← NUEVA CELDA */}
                 <td className="border px-4 py-2">{persona.nombre}</td>
                 <td className="border px-4 py-2">{persona.apellido}</td>
                 <td className="border px-4 py-2">{persona.correo}</td>
