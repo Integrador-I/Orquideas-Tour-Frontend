@@ -106,8 +106,12 @@ function TablaNombres() {
 
   return (
     <>
+
+      <h1 className="text-3xl font-bold text-center mb-6">Lista de usuarios</h1>
+
+
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">Añadir persona</h2>
+        <h2 className="text-xl font-bold mb-2">Añadir Nuevo Usuario</h2>
         
         <form className="mb-4 flex gap-2">
           <input
