@@ -1,6 +1,8 @@
-interface EstadoDePedidoProps {
+interface EstadoDePedidoProps
+{
   status: 'confirmed' | 'paid' | 'shipped' | 'delivered';
 }
+
 export const estadoEncomienda = [
   {
     key: 'confirmed',

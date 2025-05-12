@@ -1,15 +1,21 @@
 "use client"
 
 import {
-  ArrowUpCircleIcon,
+
   BarChartIcon,
+  BusFront,
+  CalendarRange,
+  CircleDollarSign,
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
   ListIcon,
+  Package,
+  Proportions,
   SearchIcon,
   SettingsIcon,
   UsersIcon,
+  UsersRound,
 } from "lucide-react"
 
 import { NavMain } from "./sidebarPrincipal"
@@ -21,8 +27,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
+
 } from "@/components/ui/sidebar"
 
 const data = {
@@ -40,32 +45,32 @@ const data = {
     {
       title: "Buses",
       url: "#",
-      icon: ListIcon,
+      icon: BusFront,
     },
     {
       title: "Calendario",
       url: "#",
-      icon: BarChartIcon,
+      icon: CalendarRange,
     },
     {
       title: "Empleados",
       url: "/dashboard/empleados",
-      icon: FolderIcon,
+      icon: UsersRound ,
     },
     {
       title: "Encomiendas",
       url: "#",
-      icon: UsersIcon,
+      icon: Package ,
     },
     {
       title: "Pagos",
       url: "#",
-      icon: UsersIcon,
+      icon: CircleDollarSign ,
     },
     {
       title: "Reporte",
       url: "#",
-      icon: UsersIcon,
+      icon: Proportions,
     },
   ],
   navSecondary: [
@@ -93,14 +98,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5">
-              <a href="#">
-                <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
+
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>

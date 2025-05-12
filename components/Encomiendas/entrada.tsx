@@ -15,15 +15,7 @@ export const EntradaEncomienda = () => {
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     setSearchPressed(true);
-    try {
-      const res = await fetch(`http://localhost:8080/api/encomienda/${searchValue}`);
-      if (!res.ok) throw new Error("No se pudo obtener el estado");
 
-      const data = await res.json();
-      console.log(data.estado);
-    } catch (error) {
-      console.log("Error al buscar estado: ",)
-    }
   };
 
   return (

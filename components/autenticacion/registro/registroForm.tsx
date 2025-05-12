@@ -27,7 +27,6 @@ export default function Registro() {
     e.preventDefault();
     setLoading(true);
     setError('');
-
     if (formData.password !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
       setLoading(false);

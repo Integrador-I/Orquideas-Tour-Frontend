@@ -4,8 +4,6 @@ import { heading, titleFont } from "@/config/fonts";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
-import { VscAccount } from "react-icons/vsc";
-import { SlArrowDown } from "react-icons/sl";
 import { LoginMenu } from "./LoginMenu/loginMenu";
 
 export const HeaderPage = () => {
