@@ -15,7 +15,6 @@ export const EntradaEncomienda = () => {
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     setSearchPressed(true);
-
   };
 
   return (

@@ -1,11 +1,9 @@
-
 import BuscadorViaje from "../BuscarViajes/buscardoViaje"
-
 export const EntradaPage = () => {
     return (
         <section
             id="inicio"
-            className="relative z-40 overflow-hidden min-h-[500px] flex items-center bg-cover bg-center bg-no-repeat"
+            className="relative z-40 overflow-hidden h-screen flex items-center bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url('/images/PortadaArequipa.webp')" }}
         >
             <div className="absolute inset-0 bg-black/40 z-0" />
@@ -21,6 +19,5 @@ export const EntradaPage = () => {
                 <BuscadorViaje />
             </div>
         </section>
-
     )
 }
