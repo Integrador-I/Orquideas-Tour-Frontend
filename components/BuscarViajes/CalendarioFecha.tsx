@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
@@ -28,7 +27,7 @@ export function CalendarioFecha({
         <Button
           variant="outline"
           className={cn(
-            "w-[220px] h-12 justify-start rounded-md px-4 text-left font-normal border border-gray-300 bg-white hover:bg-gray-50",
+            "w-[220px] h-12 justify-start rounded-md px-4 text-left font-normal border-none border-gray-300 bg-white hover:bg-gray-50 focus:outline-none focus:ring-0 focus:ring-offset-0 shadow-sm",
             !date && "text-muted-foreground"
           )}
         >
