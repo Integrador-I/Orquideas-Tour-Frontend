@@ -23,13 +23,13 @@ export const EntradaEncomienda = () => {
       const data = await res.json();
       setEstado(data.estadoEncomienda);
     } catch (error) {
-      console.log("Error al buscar estado: ",error)
+      console.log("Error al buscar estado: ", error)
       setEstado(null);
     }
   };
 
   return (
-    <section className="relative z-40 overflow-hidden py-16 sm:py-24 lg:py-28 bg-amber-50 min-h-screen flex items-center">
+    
       <div className="px-4 mx-auto max-w-7xl w-full">
         <div
           className={`text-center mb-10 transition-all duration-700 ${mounted ? "animate-fadeIn" : "opacity-0"
@@ -98,7 +98,7 @@ export const EntradaEncomienda = () => {
             />
           </div>
 
-          {searchPressed && estadoEncomienda&&(
+          {searchPressed && estadoEncomienda && (
             <div className="space-y-10 transition-all duration-700 animate-pop">
               <EstadoDePedidoRecomendado status={estadoEncomienda} />
               <p className="text-gray-700 text-lg font-medium text-center md:text-left">
@@ -108,6 +108,5 @@ export const EntradaEncomienda = () => {
           )}
         </div>
       </div>
-    </section>
   );
 };
