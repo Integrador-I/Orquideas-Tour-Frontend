@@ -7,6 +7,7 @@ export const EntradaEncomienda = () => {
   const [searchPressed, setSearchPressed] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [estadoEncomienda, setEstado] = useState<"confirmed" | "paid" | "shipped" | "delivered" | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -15,6 +16,16 @@ export const EntradaEncomienda = () => {
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     setSearchPressed(true);
+    try {
+      const res = await fetch(`http://localhost:8080/api/seguimiento/${searchValue}`);
+      if (!res.ok) throw new Error("No se pudo obtener el estado");
+
+      const data = await res.json();
+      setEstado(data.estadoEncomienda);
+    } catch (error) {
+      console.log("Error al buscar estado: ",error)
+      setEstado(null);
+    }
   };
 
   return (
@@ -87,9 +98,9 @@ export const EntradaEncomienda = () => {
             />
           </div>
 
-          {searchPressed && (
+          {searchPressed && estadoEncomienda&&(
             <div className="space-y-10 transition-all duration-700 animate-pop">
-              <EstadoDePedidoRecomendado status="shipped" />
+              <EstadoDePedidoRecomendado status={estadoEncomienda} />
               <p className="text-gray-700 text-lg font-medium text-center md:text-left">
                 Tu pedido se encuentra en tránsito y será entregado pronto.
               </p>

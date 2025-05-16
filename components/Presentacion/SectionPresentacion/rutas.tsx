@@ -3,8 +3,8 @@ import React from 'react'
 export const RutasPage = () => {
     return (
         <section
-            className="relative z-40 overflow-hidden h-screen flex items-center bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/images/PortadaArequipa.webp')" }}
+            className="relative z-40 overflow-hidden h-screen flex items-center bg-[200px_300px] bg-cover  bg-no-repeat"
+            style={{ backgroundImage: "url('/images/camion.png')" }}
         >
             <div className="absolute inset-0 bg-black/40 z-0" />
             <div className="relative z-10 px-4 mx-auto max-w-7xl w-full">

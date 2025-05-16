@@ -19,8 +19,8 @@ export function SelectDemo() {
       <SelectContent className="w-[180px] max-w-[180px] overflow-hidden z-50 fixed" side="bottom" align="start" sideOffset={4}>
         <SelectGroup>
           <SelectLabel>Rutas</SelectLabel>
-          <SelectItem value="apple">Arequipa</SelectItem>
-          <SelectItem value="banana">Omate</SelectItem>
+          <SelectItem value="arequipa">Arequipa</SelectItem>
+          <SelectItem value="omate">Omate</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

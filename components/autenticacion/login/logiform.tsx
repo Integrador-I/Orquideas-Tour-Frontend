@@ -18,15 +18,31 @@ export default function LoginForm() {
     setError('');
 
     try {
-      // Backend :v
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      if (email && password) {
-        router.push('/');
-      } else {
-        setError('Credenciales incorrectas');
+      const response = await fetch(`http://localhost:8080/api/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          correo: email,
+          password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        const message = await response.text();
+        setError(message || 'Credenciales incorrectas');
+        return;
       }
+
+      // Si deseas usar el usuario, descomenta:
+      // const user = await response.json();
+      await response.json(); // consumimos la respuesta aunque no la usemos
+
+      router.push('/');
     } catch (err) {
-      setError('Ocurrió un error al iniciar sesión');
+      console.error('Error de conexión:', err);
+      setError('Error al conectar con el servidor');
     } finally {
       setLoading(false);
     }
@@ -39,7 +55,7 @@ export default function LoginForm() {
           {error}
         </div>
       )}
-      
+
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-blue-700">
           Correo electrónico

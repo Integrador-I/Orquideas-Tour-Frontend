@@ -49,6 +49,7 @@ export default function Registro() {
         setError('Error al crear la cuenta');
       }
     } catch (err) {
+      console.log(err)
       setError('Ocurrió un error al registrar la cuenta');
     } finally {
       setLoading(false);
