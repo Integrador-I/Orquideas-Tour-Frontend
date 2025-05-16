@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./Paquetes.module.css";
 import { BotonPaquetes } from "./botonPaquetes";
-
+import Image from "next/image";
 
 export const Paquetes = () => {
   const [indiceActual, setIndiceActual] = useState(0);
@@ -41,66 +40,82 @@ export const Paquetes = () => {
   };
 
   return (
-    <div className={styles.pricingContainer}>
-      <div className={styles.pricingTable}>
-        <h1>¿Qué tipo de producto deseas enviar?</h1>
-        <p className={styles.subtitle}>Elige un paquete</p>
+    <div className="flex flex-col items-center w-full max-w-7xl px-4 py-6">
+      {/* Encabezado */}
+      <div className="text-center mb-6">
+        <h1 className="text-4xl text-amber-600 font-bold mb-2">
+          ¿Qué tipo de producto deseas enviar?
+        </h1>
+        <p className="font-bold text-[#838383]">Elige un paquete</p>
+      </div>
 
-        <div className={styles.priceList}>
-          <div className={`${styles.priceCard} ${styles.active} ${styles.paqueteCiclo}`}>
-            <h3>Elija el paquete</h3>
-            <h2>Producto a enviar</h2>
-            <h2 className={styles.talla}>{paquetes[indiceActual].talla}</h2>
-            <p className={styles.detalle} dangerouslySetInnerHTML={{ __html: paquetes[indiceActual].detalle }} />
-            <img src={paquetes[indiceActual].imagen} alt="Imagen Paquete" />
+      {/* Tarjetas */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        {/* Tarjeta 1 */}
+        <div className="p-5 bg-white text-black rounded-[20px] overflow-hidden flex flex-col shadow-md">
+          <h3 className="font-light opacity-90">Elija el paquete</h3>
+          <h2 className="font-bold">Producto a enviar</h2>
+          <h2 className="font-bold">{paquetes[indiceActual].talla}</h2>
+          <div
+            className="mt-4 opacity-90"
+            dangerouslySetInnerHTML={{ __html: paquetes[indiceActual].detalle }}
+          />
+          <Image
+            src={paquetes[indiceActual].imagen}
+            alt="Imagen Paquete"
+            width={500}
+            height={300}
+            className="w-full h-auto object-contain mt-4"
+          />
+          <BotonPaquetes onClick={CambiarPaquete} />
+        </div>
 
-            {/* Botón para cambiar el paquete */}
-            <BotonPaquetes onClick={CambiarPaquete} />
+        {/* Tarjeta 2 */}
+        <div className="p-5 bg-white text-black rounded-[20px] overflow-hidden flex flex-col shadow-md">
+          <h3 className="font-light opacity-90">¿Quién realiza el envío?</h3>
+          <div className="mt-4 opacity-90 space-y-4">
+            {["DNI", "Nombre completo", "Apellido Paterno", "Apellido Materno", "Celular"].map(
+              (placeholder, i) => (
+                <div key={i}>
+                  <strong>{placeholder}</strong>
+                  <input
+                    type={placeholder === "Celular" || placeholder === "DNI" ? "number" : "text"}
+                    placeholder={placeholder}
+                    className="w-full p-2 border rounded mt-1"
+                  />
+                </div>
+              )
+            )}
           </div>
+        </div>
 
-          {/* Segunda tarjeta */}
-          <div className={styles.priceCard}>
-            <h3>¿Quién realiza el envio?</h3>
-            <p className={styles.detalle}>
-              <strong>Documento nacional de identidad</strong><br />
-              <input type="number" placeholder="DNI" /><br /><br />
+        {/* Tarjeta 3 */}
+        <div className="p-5 bg-white text-black rounded-[20px] overflow-hidden flex flex-col shadow-md">
+          <h3 className="font-light opacity-90">¿Quién recibe el envío?</h3>
+          <div className="mt-4 opacity-90 space-y-4">
+            {["DNI", "Nombre completo", "Apellido Paterno", "Apellido Materno", "Celular"].map(
+              (placeholder, i) => (
+                <div key={i}>
+                  <strong>{placeholder}</strong>
+                  <input
+                    type={placeholder === "Celular" || placeholder === "DNI" ? "number" : "text"}
+                    placeholder={placeholder}
+                    className="w-full p-2 border rounded mt-1"
+                  />
+                </div>
+              )
+            )}
 
-              <strong>Nombre Completo</strong><br />
-              <input type="text" placeholder="Nombre completo" /><br /><br />
+            <button className="w-full bg-[#3b5998] text-white py-3 px-4 rounded-[10px] text-base font-bold transition-all duration-200 hover:scale-[1.02]">
+              Continuar
+            </button>
 
-              <strong>Apellido Paterno</strong><br />
-              <input type="text" placeholder="Apellido Paterno" /><br /><br />
-
-              <strong>Apellido Materno</strong><br />
-              <input type="text" placeholder="Apellido Materno" /><br /><br />
-
-              <strong>Celular</strong><br />
-              <input type="number" placeholder="Número de celular" /><br /><br />
-            </p>
-          </div>
-
-          {/* Tercera tarjeta */}
-          <div className={styles.priceCard}>
-            <h3>¿Quién recibe el envio?</h3>
-            <p className={styles.detalle}>
-              <strong>Documento nacional de identidad</strong><br />
-              <input type="number" placeholder="DNI" /><br /><br />
-
-              <strong>Nombre Completo</strong><br />
-              <input type="text" placeholder="Nombre completo" /><br /><br />
-
-              <strong>Apellido Paterno</strong><br />
-              <input type="text" placeholder="Apellido Paterno" /><br /><br />
-
-              <strong>Apellido Materno</strong><br />
-              <input type="text" placeholder="Apellido Materno" /><br /><br />
-
-              <strong>Celular</strong><br />
-              <input type="number" placeholder="Número de celular" /><br /><br />
-
-              <button className={styles.continuar}>Continuar</button>
-              <p id="registroMensaje" className={styles.mensaje} style={{ display: "none" }}>Se ha registrado correctamente</p>
-            </p>
+            <div
+              id="registroMensaje"
+              className="hidden mt-4 font-bold text-white text-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#3b5998] py-5 px-10 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.3)] text-xl z-[999] w-auto min-w-[250px] max-w-[500px]"
+            >
+              Se ha registrado correctamente
+            </div>
           </div>
         </div>
       </div>
