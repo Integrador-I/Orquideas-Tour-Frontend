@@ -46,7 +46,7 @@ export const HeaderPage = () => {
               { name: 'Viajes', path: '/viajes' },
               { name: 'Seguimientos', path: '/seguimiento'},
               { name: 'Paqueteria', path: '/encomiendas' },
-              { name: 'Centro de Ayuda', path: '/pagos' },
+              { name: 'Centro de Ayuda', path: '/CentroAyuda' },
             ].map((item) => (
               <li key={item.name} className="w-full text-center lg:w-auto">
                 <Link
