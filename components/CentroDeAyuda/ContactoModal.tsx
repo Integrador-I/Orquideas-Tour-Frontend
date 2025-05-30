@@ -27,7 +27,6 @@ export default function ContactoModal({ isOpen, onClose }: { isOpen: boolean; on
     setIsSubmitting(true);
     
     try {
-      // Simulamos un retraso de red
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       setSubmitSuccess(true);
