@@ -49,7 +49,7 @@ export default function CentroAyuda() {
           <ContactoEmergencia />
         </div>
 
-
+        <ChatBox/>
         {/* Banner de asistencia */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl p-8 text-white flex flex-col md:flex-row items-center justify-between shadow-lg">
           <div className="mb-6 md:mb-0">
