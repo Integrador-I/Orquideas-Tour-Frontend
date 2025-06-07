@@ -22,10 +22,10 @@ export default function ContactoEmergencia() {
           <div className="bg-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 shadow-sm">
             {contacto.icon}
           </div>
-          <h3 className="text-xl font-bold text-blue-800 mb-2">{contacto.title}</h3>
+          <h3 className="text-xl font-bold text-white-800 mb-2">{contacto.title}</h3>
           <p className="text-blue-700 mb-2">{contacto.description}</p>
-          <p className="text-2xl font-bold text-blue-900 hover:text-blue-700">{contacto.info}</p>
-          {contacto.extra && <p className="text-sm text-blue-600 mt-2">{contacto.extra}</p>}
+          <p className="text-2xl font-bold text-white-900 hover:text-white-700">{contacto.info}</p>
+          {contacto.extra && <p className="text-sm text-white-600 mt-2">{contacto.extra}</p>}
         </div>
       ))}
     </div>

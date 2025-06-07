@@ -4,7 +4,7 @@ export default function CategoriasAyuda() {
         id: 1,
         title: "Boletos de Viaje",
         icon: "🚌",
-        color: "bg-blue-200",
+        color: "bg-blue-500",
         items: [
           "Cómo comprar un boleto",
           "Cancelación y reembolsos",
@@ -17,7 +17,7 @@ export default function CategoriasAyuda() {
         id: 2,
         title: "Encomiendas",
         icon: "📦",
-        color: "bg-blue-300",
+        color: "bg-blue-500",
         items: [
           "Cómo enviar un paquete",
           "Tarifas y tamaños permitidos",
@@ -30,7 +30,7 @@ export default function CategoriasAyuda() {
         id: 3,
         title: "Pagos y Facturación",
         icon: "💳",
-        color: "bg-blue-400",
+        color: "bg-blue-500",
         items: [
           "Métodos de pago aceptados",
           "Problemas con el pago",
@@ -60,10 +60,10 @@ export default function CategoriasAyuda() {
           <div key={categoria.id} className={`${categoria.color} rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow hover:translate-y-[-4px]`}>
             <div className="p-6">
               <div className="text-4xl mb-4">{categoria.icon}</div>
-              <h3 className="text-xl font-bold text-blue-800 mb-4">{categoria.title}</h3>
+              <h3 className="text-xl font-bold text-white-800 mb-4">{categoria.title}</h3>
               <ul className="space-y-2">
                 {categoria.items.map((item, index) => (
-                  <li key={index} className="text-blue-700 hover:text-blue-900">
+                  <li key={index} className="text-white-700 hover:text-blue-900">
                     <a href="#" className="flex items-center">
                       <span className="mr-2">•</span>
                       {item}
