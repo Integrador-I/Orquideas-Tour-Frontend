@@ -44,7 +44,7 @@ const data = {
     },
     {
       title: "Buses",
-      url: "#",
+      url: "/dashboard/buses",
       icon: BusFront,
     },
     {
