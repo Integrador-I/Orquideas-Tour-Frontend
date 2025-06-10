@@ -1,4 +1,6 @@
-import { SectionCards } from "@/components/Dashboard/SectionCards";
+import { SectionCards } from "@/components/Dashboard/buses/SectionCards";
+
+
 
 export default function dashboard(){
     return(

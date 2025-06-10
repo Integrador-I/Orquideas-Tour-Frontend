@@ -13,8 +13,14 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { Bus } from "./types";
 
-export const FormBus = () => {
+
+export const FormBus = ({
+  setBuses,
+}: {
+  setBuses: React.Dispatch<React.SetStateAction<Bus[]>>;
+}) => {
   const [formData, setFormData] = useState({
     plate: "",
     type: "",
@@ -22,12 +28,7 @@ export const FormBus = () => {
     state: "activo",
   });
 
-  const [dialog, setDialog] = useState<{
-    open: boolean;
-    title: string;
-    message: string;
-    success: boolean;
-  }>({
+  const [dialog, setDialog] = useState({
     open: false,
     title: "",
     message: "",
@@ -43,12 +44,16 @@ export const FormBus = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8080/bus", {
+      const res = await axios.post("http://localhost:8080/bus", {
         ...formData,
         capacity: parseInt(formData.capacity),
       });
 
       setFormData({ plate: "", type: "", capacity: "", state: "activo" });
+
+      // Agrega el nuevo bus a la tabla sin recargar
+      setBuses(prev => [...prev, res.data]);
+
       setDialog({
         open: true,
         title: "Éxito",
@@ -68,61 +73,55 @@ export const FormBus = () => {
   };
 
   return (
-     <>
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <Label htmlFor="plate">Plate</Label>
-        <Input type="text" name="plate" id="plate" value={formData.plate} onChange={handleChange} required />
-      </div>
-      <div>
-        <Label htmlFor="type">Type</Label>
-        <Input type="text" name="type" id="type" value={formData.type} onChange={handleChange} required />
-      </div>
-      <div>
-        <Label htmlFor="capacity">Capacity</Label>
-        <Input type="number" name="capacity" id="capacity" value={formData.capacity} onChange={handleChange} required />
-      </div>
-      <div>
-        <Label htmlFor="state">State</Label>
-        <select
-          id="state"
-          name="state"
-          value={formData.state}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-black"
-          required
-        >
-          <option value="activo">Activo</option>
-          <option value="mantenimiento">Mantenimiento</option>
-          <option value="inactivo">Inactivo</option>
-        </select>
-      </div>
-      <Button 
-        type="submit"
-        className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
-      >
-        Submit
-      </Button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <Label htmlFor="plate">Plate</Label>
+          <Input type="text" name="plate" id="plate" value={formData.plate} onChange={handleChange} required />
+        </div>
+        <div>
+          <Label htmlFor="type">Type</Label>
+          <Input type="text" name="type" id="type" value={formData.type} onChange={handleChange} required />
+        </div>
+        <div>
+          <Label htmlFor="capacity">Capacity</Label>
+          <Input type="number" name="capacity" id="capacity" value={formData.capacity} onChange={handleChange} required />
+        </div>
+        <div>
+          <Label htmlFor="state">State</Label>
+          <select
+            id="state"
+            name="state"
+            value={formData.state}
+            onChange={handleChange}
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm"
+            required
+          >
+            <option value="activo">Activo</option>
+            <option value="mantenimiento">Mantenimiento</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+        </div>
+        <Button type="submit" className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+          Submit
+        </Button>
+      </form>
 
-    {/* Modal de respuesta */}
-    <Dialog open={dialog.open} onOpenChange={(open) => setDialog(prev => ({ ...prev, open }))}>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle className={dialog.success ? "text-green-600" : "text-red-600"}>
-            {dialog.title}
-          </DialogTitle>
-          <DialogDescription>
-            {dialog.message}
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter>
-          <Button onClick={() => setDialog(prev => ({ ...prev, open: false }))}>
-            Cerrar
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  </>
+      <Dialog open={dialog.open} onOpenChange={(open) => setDialog(prev => ({ ...prev, open }))}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className={dialog.success ? "text-green-600" : "text-red-600"}>
+              {dialog.title}
+            </DialogTitle>
+            <DialogDescription>{dialog.message}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => setDialog(prev => ({ ...prev, open: false }))}>
+              Cerrar
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
