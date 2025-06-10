@@ -1,4 +1,4 @@
-import { SectionCards } from "@/components/Dashboard/buses/SectionCards";
+import { SectionCards } from "@/components/Dashboard/SectionCards";
 
 
 

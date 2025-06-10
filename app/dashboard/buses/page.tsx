@@ -9,15 +9,17 @@ export default function Buses() {
   const [buses, setBuses] = useState<Bus[]>([]);
 
   return (
-    <div className="min-h-screen px-4 py-8 flex flex-col items-center bg-white">
-      <h1 className="text-2xl font-semibold mb-6">Administración de Buses</h1>
-
-      <div className="w-full max-w-md p-6 rounded-lg">
-        <FormBus setBuses={setBuses} />
-      </div>
-
-      <div className="w-full max-w-4xl">
-        <TableBus buses={buses} setBuses={setBuses} />
+    <div className="min-h-screen px-4 py-8 bg-white">
+      <div className="flex flex-col lg:flex-row justify-center items-start gap-8">
+        <div className="flex flex-col w-full max-w-md">
+          <h1 className="text-4xl font-semibold mb-8">Administración de Buses</h1>
+          <div className="p-6 rounded-lg shadow-md">
+            <FormBus setBuses={setBuses} />
+          </div>
+        </div>
+        <div className="w-full flex-1 max-w-4xl pt-19">
+          <TableBus buses={buses} setBuses={setBuses} />
+        </div>
       </div>
     </div>
   );

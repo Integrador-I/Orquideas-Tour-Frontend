@@ -30,6 +30,7 @@ import {
 
 } from "@/components/ui/sidebar"
 
+
 const data = {
   user: {
     nombre: "Jhon Doe",
@@ -53,8 +54,8 @@ const data = {
       icon: CalendarRange,
     },
     {
-      title: "Empleados",
-      url: "/dashboard/empleados",
+      title: "Conductores",
+      url: "/dashboard/conductores",
       icon: UsersRound ,
     },
     {
