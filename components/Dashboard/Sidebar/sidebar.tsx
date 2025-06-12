@@ -56,6 +56,11 @@ const data = {
       icon: CalendarRange,
     },
     {
+      title: "Empleados",
+      url: "/dashboard/empleados",
+      icon: UsersRound ,
+    },
+    {
       title: "Conductores",
       url: "/dashboard/conductores",
       icon: UsersRound ,
