@@ -10,6 +10,8 @@ import {
   HelpCircleIcon,
   LayoutDashboardIcon,
 
+  MapPinned,
+
   Package,
   Proportions,
   SearchIcon,
@@ -57,6 +59,11 @@ const data = {
       title: "Conductores",
       url: "/dashboard/conductores",
       icon: UsersRound ,
+    },
+    {
+      title: "viajes",
+      url: "/dashboard/viajes",
+      icon: MapPinned  ,
     },
     {
       title: "Encomiendas",
