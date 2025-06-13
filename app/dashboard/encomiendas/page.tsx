@@ -1,5 +1,7 @@
+import { TableEncomiendas } from "@/components/Dashboard/Encomiendas/tableEncomiendas";
+
 export default function encomiendas(){
     return(
-        <div>hola</div>
+        <TableEncomiendas/>
     )
 } 

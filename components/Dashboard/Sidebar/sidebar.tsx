@@ -67,7 +67,7 @@ const data = {
     },
     {
       title: "Encomiendas",
-      url: "#",
+      url: "/dashboard/encomiendas",
       icon: Package ,
     },
     {
